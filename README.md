@@ -26,7 +26,7 @@ http://willdrevo.com/ (haven't posted yet)
 
 Deuces is easy to set up and use. 
 
-```python
+```{python}
 >>> from deuces import Card
 >>> card = Card.new('Qh')
 ```
@@ -35,7 +35,7 @@ Card objects are represented as integers to keep Deuces performant and lightweig
 
 Now let's create the board and an example Texas Hold'em hand:
 
-```python
+```{python}
 >>> board = [
 >>>     Card.new('Ah'),
 >>>     Card.new('Kd'),
@@ -55,7 +55,7 @@ Pretty print card integers to the terminal:
 If you have [`termacolor`](http://pypi.python.org/pypi/termcolor) installed, they will be colored as well. 
 
 Otherwise move straight to evaluating your hand strength:
-```python
+```{python}
 >>> from deuces import Evaluator
 >>> evaluator = Evaluator()
 >>> print evaluator.evaluate(board, hand)
@@ -65,7 +65,7 @@ Otherwise move straight to evaluating your hand strength:
 Hand strength is valued on a scale of 1 to 7462, where 1 is a Royal Flush and 7462 is unsuited 7-5-4-3-2, as there are only 7642 distinctly ranked hands in poker. Once again, refer to my blog post for a more mathematically complete explanation of why this is so. 
 
 If you want to deal out cards randomly from a deck, you can also do that with Deuces:
-```python
+```{python}
 >>> from deuces import Deck
 >>> deck = Deck()
 >>> board = deck.draw(5)
@@ -82,7 +82,7 @@ and print them:
       [ A ♣ ] , [ 3 ❤ ] 
 
 Let's evaluate both hands strength, and then bin them into classes, one for each hand type (High Card, Pair, etc)
-```python
+```{python}
 >>> p1_score = evaluator.evaluate(board, player1_hand)
 >>> p2_score = evaluator.evaluate(board, player2_hand)
 >>> p1_class = evaluator.get_rank_class(p1_score)
